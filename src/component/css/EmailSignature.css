@@ -1,0 +1,230 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Tahoma', sans-serif;
+  
+}
+
+a{
+  color: #004c98
+}
+b,strong{
+  color: #004c98
+}
+
+table,tr,td{
+  border-spacing: 0;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.form{
+  flex: 45%;
+}
+
+.signature{
+  flex: 1000px;
+}
+
+/* css for form section */
+
+.form{
+  
+  background: #004c98;
+  color: #ffffff;
+}
+
+#signatureform{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+ 
+}
+
+#signatureform h1{
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bolder;
+}
+
+.information{
+ margin: auto;
+ margin-left: 15%;
+}
+
+.information-child{
+  /* margin: 10px; */
+  padding: 7px;
+}
+
+.information input,select{
+  padding: 7px;
+  width: 70%;
+  background-color: rgb(255,255,255,0.5);
+  border-radius: 7px;
+  border: 2px ;
+  height: 35px;
+  
+}
+
+.information label{
+  padding: 7px;
+  margin-bottom: 5px;
+  width: 100%;
+  font-weight: bold;
+  font-size: medium;
+ 
+}
+
+
+option{
+  border-radius: 5px;
+  background-color: rgb(255,255,255,0.5);
+
+}
+
+#dropdown{
+  background-color: gainsboro;
+}
+
+
+/* Submit Button */
+#submit-btn{
+  margin: 10px;
+  padding: 5px;
+  height: auto;
+  width:auto;
+  padding: 10px;
+  border-radius: 12px;
+  color: #ffffff;
+  background-color: #f36421;
+  font-size: medium;
+  font-weight: bold;
+  box-shadow: black;
+}
+/* signature form ends */
+
+
+/* for signature  */
+.signature{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#previewArea{
+  width: 820px;
+  color: #004c98;
+  
+}
+
+.strip{
+  color: #004c98;
+}
+
+.name{
+  padding: 2px;
+  font: 19.5px;
+}
+
+.designation{
+  font: 16px;
+  padding: 2px;
+
+  
+}
+
+/* Table Name and Media Section */
+table{
+  width: 100%;
+}
+
+.table-name{
+  width: 574px;
+}
+
+.table-media{
+  width: 246px;
+  padding: 2px;
+  text-align: center;
+  margin-right: 30px;
+}
+
+.table-media a{
+  padding: 2px;
+  margin: 2px;
+
+}
+
+/* middle section */
+.info-section{
+  width: 574px;
+  color: #004c98;
+}
+
+.info-section a{
+  color: #004c98;
+}
+
+#contact-detail{
+  font-size: 13px;
+  margin-left: 5px;
+  
+}
+
+td #info-logo{
+  width: 27px;
+  height:27px;
+  padding: 2px;
+}
+
+td.awards-section{
+  width: 246px;
+  text-align: center;
+  padding: 5px;
+}
+
+.bottom-section {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.strip-bottom {
+  background-color: #004c98;
+  color: #ffffff;
+  height: 50px;
+}
+
+.strip-bottom-text {
+  border-top: 8px solid #f36421;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.strip-bottom p {
+  font-size: 19px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.p-bottom{
+  color: #666666;
+  font-size: 9px;
+  line-height: 9px;
+}
+
+.p-top{
+  color: #004c98;
+  font-weight: bold;
+  font-size: small;
+}
