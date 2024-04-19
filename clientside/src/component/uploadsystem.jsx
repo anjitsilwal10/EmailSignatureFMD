@@ -111,9 +111,7 @@ function FileUpload() {
                   ))}
                 </div>
               )}
-            </div>))
-          
-          
+            </div>))   
     );
 }
 
