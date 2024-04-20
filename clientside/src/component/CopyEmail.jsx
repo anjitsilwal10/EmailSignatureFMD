@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../component/css/CopyEmailSignature.css';
+import '../component/css/as10.css';
 
 
 const EmailSignature = () => {
@@ -96,8 +96,8 @@ const EmailSignature = () => {
 
                     <div className="information">
                         <div className='information-child'>
-                            <label htmlFor= "Display Picture">Profile Picture</label><br />
-                            <input type='' id='dpicture' name='dpicture' placeholder='URL' value={dpicture}
+                            <label htmlFor="Display Picture">Profile Picture</label><br />
+                            <input type='text' id='dpicture' name='dpicture' placeholder='URL' value={dpicture}
                                 onChange={(e) => setDisplay(e.target.value)}
                             // onClick={handleInputClick}
                             /><br />
@@ -193,194 +193,144 @@ const EmailSignature = () => {
             </div>
 
             <div className="signature">
-                <div id="previewArea">
+                <body style={{ margin: "0", padding: "0", fontFamily: "Tahoma" }}>
 
-                    <p className='p-top'>
-                        If you need any further information, please do not hesitate to contact
-                        me.<br />
-                        Kind Regards,
-                    </p>
-                    <br />
-
-                    <table className='strip' >
-                        <tr>
-                            <td>
-                                {dpicture && (
-                                    <img className='as10' src={dpicture} alt='Agent' />
-                                )}
-                            </td>
-                        </tr>
-                    </table>
-
-
-
-                    <table>
-                        <tr className='name-media'>
-
-                            <td className='table-name'>
-                                <h2 className='name'>{name}</h2>
-                                <p className='designation'><i>{designation}</i></p>
-                                <h4>{franchise}</h4>
-                            </td>
-
-                            <td className='table-media'>
-                                {facebook && (
-                                    <a href={facebook} target='_blank' rel='noreferrer'>
-                                        {/* <img src='https://dasraa.com/MultiDynamicEmail/facebook.png' alt='facebook'/> */}
-                                        <img src='https://dasraa.com/MultiDynamicEmail/Sig-Icons/facebook.png' alt='facebook' />
-                                    </a>
-                                )}
-
-                                {instagram && (
-                                    <a href={instagram} target='_blank' rel='noreferrer'>
-                                        {/* <img src='https://dasraa.com/MultiDynamicEmail/insta.png' alt='instagram'/> */}
-                                        <img src='https://dasraa.com/MultiDynamicEmail/Sig-Icons/instagram.png' alt='instagram' />
-                                    </a>
-                                )}
-
-                                {linkedin && (
-                                    <a href={linkedin} target='_blank' rel='noreferrer'>
-                                        {/* <img src='https://dasraa.com/MultiDynamicEmail/linkedin.png' alt='linkedin'/> */}
-                                        <img src='https://dasraa.com/MultiDynamicEmail/Sig-Icons/linkedin.png' alt='linkedin' />
-                                    </a>
-                                )}
-
-                                {twitter && (
-                                    <a href={twitter} target='_blank' rel='noreferrer'>
-                                        {/* <img src='https://dasraa.com/MultiDynamicEmail/twitter.png' alt='twitter'/> */}
-                                        <img src='https://dasraa.com/MultiDynamicEmail/Sig-Icons/twitterx.png' alt='twitter' />
-                                    </a>
-                                )}
-
-                                {youtube && (
-                                    <a href={youtube} target='_blank' rel='noreferrer'>
-                                        {/* <img src='https://dasraa.com/MultiDynamicEmail/youtube.png' alt='youtube'/> */}
-                                        <img src='https://dasraa.com/MultiDynamicEmail/Sig-Icons/youtube.png' alt='youtube' />
-                                    </a>
-                                )}
-
-                            </td>
-                        </tr>
-                    </table>
-
-                    {/* Middle Section */}
-                    <table className='middle-section'>
-                        <tr>
-
-                            <td className='info-section'>
-
-                                <table>
-                                    <tr>
-                                        <td id='info-logo'>
-                                            <a target='_blank' rel='noreferrer' href={`tel:${phone}`}>
-                                                <img id='contact-info' src='https://dasraa.com/MultiDynamicEmail/website.png' alt='contact' />
-                                            </a>
-                                        </td>
-
-                                        <td>
-                                            <p>
-                                                <a id='contact-detail' target='_blank' rel='noreferrer' href={`tel:${tel}`}>{tel} </a>
-                                                &nbsp;&nbsp;•&nbsp;&nbsp;
-                                                <a id='contact-detail' target='_blank' rel='noreferrer' href={`tel:${phone}`}>{phone}</a>
-                                            </p>
-                                        </td>
-                                    </tr>
-
-                                    {/* email address */}
-                                    <tr>
-                                        <td id='info-logo'>
-                                            <a target='_blank' rel='noreferrer' href={`mailto:${email}`}>
-                                                <img id='contact-info' src='https://dasraa.com/MultiDynamicEmail/email.png' alt='contact' />
-                                            </a>
-                                        </td>
-
-                                        <td>
-                                            <p>
-                                                <a target='_blank' rel='noreferrer' id='contact-detail' href={`mailto:${email}`}>
-                                                    {email}
-                                                </a>
-                                            </p>
-                                        </td>
-                                    </tr>
-
-                                    {/* location */}
-                                    <tr>
-                                        <td id='info-logo'>
-                                            <a target='_blank' rel='noreferrer' href={location}>
-                                                <img id='contact-info' src='https://dasraa.com/MultiDynamicEmail/location.png' alt='contact' />
-                                            </a>
-                                        </td>
-
-                                        <td>
-                                            <p>
-                                                <a target='_blank' rel='noreferrer' id='contact-detail' href={location}>
-                                                    {address}
-                                                </a>
-                                            </p>
-                                        </td>
-                                    </tr>
-
-                                    {/* website */}
-                                    <tr>
-                                        <td id='info-logo'>
-                                            <a href={website} target='_blank' rel='noreferrer'>
-                                                <img id='contact-info' src='https://dasraa.com/MultiDynamicEmail/website.png' alt='contact' />
-                                            </a>
-                                        </td>
-
-                                        <td>
-                                            <p>
-                                                <a id='contact-detail' href={website} target='_blank' rel='noreferrer'>
-                                                    {website}
-                                                </a>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-
-
-                            {/* awards section */}
-                            <td className='awards-section'>
-                                <img id='awards-image' src='https://dasraa.com/MultiDynamicEmail/awards.png' alt='contact' />
-
-                            </td>
-                        </tr>
-
-                    </table>
-
-                    {/* Bottom Strip */}
-
-                    <table>
-                        <tr>
-                            <td className='footer-img'>
-                                <img src="https://dasraa.com/MultiDynamicEmail/Footer.png" alt="footer" />
-                            </td>
-
-                        </tr>
-                    </table>
-
-                    <p className='p-bottom'>
-                        <b>Disclaimer:</b>
-                        This email is for its intended recipient only. If this
-                        email has been sent to you by error or contains private or confidential
-                        information, including the contact details of other persons, then you
-                        must not copy and distribute this information. Any views expressed in
-                        this email are those of the individual sender and may not necessarily
-                        reflect the views of Multi-Dynamic Pty Ltd. The sender
-                        believes this communication is free from any virus, worm, Trojan horse
-                        and/ or malicious code when sent. By reading this message and opening
-                        any attachments, the recipient accepts full responsibility for taking
-                        protective and remedial action as required.
+                    <div id="previewArea" style={{ color: "#004c98", width: "820px" }}>
+                        <p style={{ fontSize: "16px" }}>
+                            <b>If you need any further information, please do not hesitate to contact me.<br />
+                                Kind Regards,</b>
+                        </p>
                         <br />
-                        <b>Privacy Policy:</b>
-                        <a target='_blank' rel='noreferrer'
-                            href="https://multidynamic.com.au/images/Privacy_policies.pdf"
-                        >ClickHere
-                        </a>
-                    </p>
 
-                </div>
+                        <table style={{ width: "820px",background: "url(https://dasraa.com/MultiDynamicEmail/MDstrip.png) no-repeat" }}>
+                            <tbody>
+                                <tr>
+                                    <td style={{ width: "820px", height: "150px" }}>
+                                        <img src={dpicture} alt="Agent" style={{ width: "150px", maxWidth: "150px", height: "150px", display: "block", border: "8px solid #f36421", borderRadius: "100%" }} />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table style={{ margin: "0", padding: "0", width: "820px" }}>
+                            <tbody style={{ width: "820px" }}>
+                                <tr>
+                                    <td style={{ margin: "0", padding: "0", width: "410px" }}>
+                                        <h2 style={{ margin: "0", padding: "0", color: "#004c98" }}>{name}</h2>
+                                        <p style={{ margin: "0", padding: "0", fontStyle: "italic", fontSize: "medium", color: "#004c98" }}>{designation}</p>
+                                        <h4 style={{ margin: "0", padding: "0" }}>{franchise}</h4>
+                                    </td>
+                                    <td style={{ margin: "0", padding: "0", width: "410px", textAlign: "center" }}>
+                                        {facebook && <a href={`${facebook}`} target="_blank" rel="noreferrer"><img src="https://dasraa.com/MultiDynamicEmail/Sig-Icons/facebook.png" alt="facebook" style={{ width: "30px", height: "30px", padding: "2px", margin: "2px" }} /></a>}
+                                        {instagram && <a href={`${instagram}`} target="_blank" rel="noreferrer"><img src="https://dasraa.com/MultiDynamicEmail/Sig-Icons/instagram.png" alt="instagram" style={{ width: "30px", height: "30px", padding: "2px", margin: "2px" }} /></a>}
+                                        {linkedin && <a href={`${linkedin}`} target="_blank" rel="noreferrer"><img src="https://dasraa.com/MultiDynamicEmail/Sig-Icons/linkedin.png" alt="linkedin" style={{ width: "30px", height: "30px", padding: "2px", margin: "2px" }} /></a>}
+                                        {twitter && <a href={`${twitter}`} target="_blank" rel="noreferrer"><img src="https://dasraa.com/MultiDynamicEmail/Sig-Icons/twitterx.png" alt="twitter" style={{ width: "30px", height: "30px", padding: "2px", margin: "2px" }} /></a>}
+                                        {youtube && <a href={`${youtube}`} target="_blank" rel="noreferrer"><img src="https://dasraa.com/MultiDynamicEmail/Sig-Icons/youtube.png" alt="youtube" style={{ width: "30pxx", height: "30px", padding: "2px", margin: "2px" }} /></a>}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table style={{ margin: "0", padding: "0", width: "820px" }}>
+                            <tbody>
+                                <tr>
+                                    {/* Left side - Contact information */}
+                                    <td style={{ margin: "0", padding: "0", width: "50%" }}>
+                                        <table style={{ margin: "0", padding: "0", width: "100%" }}>
+                                            <tbody>
+                                                <tr>
+                                                    <td style={{ margin: "0", padding: "0" }}>
+                                                        <a href={`tel:${phone}`} target="_blank" rel="noreferrer">
+                                                            <img src="https://dasraa.com/MultiDynamicEmail/website.png" alt="contact" style={{ width: "auto", maxWidth: "100%", height: "auto", display: "block" }} />
+                                                        </a>
+                                                    </td>
+                                                    <td style={{ margin: "0", padding: "0", fontSize:"14px" }}>
+                                                        <p style={{ margin: "0", padding: "0" }}>
+                                                            <a href={`tel:{tel}`} target="_blank" rel="noreferrer" style={{ color: "#004c98", textDecoration: "none" }}>{tel}</a>
+                                                            &nbsp;&nbsp;•&nbsp;&nbsp;
+                                                            <a href="tel:{phone}" target="_blank" rel="noreferrer" style={{ color: "#004c98", textDecoration: "none" }}>{phone}</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style={{ margin: "0", padding: "0" }}>
+                                                        <a href={`mailto:${email}`} target="_blank" rel="noreferrer">
+                                                            <img src="https://dasraa.com/MultiDynamicEmail/email.png" alt="contact" style={{ width: "25px", maxWidth: "25px", height: "25px", display: "block" }} />
+                                                        </a>
+                                                    </td>
+                                                    <td style={{ margin: "0", padding: "0"}}>
+                                                        <p style={{ margin: "0", padding: "0", fontSize:"14px" }}>
+                                                            <a href={`mailto:${email}`} target="_blank" rel="noreferrer" style={{ margin: "0", padding: "0",color: "#004c98", textDecoration: "none" }}>{email}</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style={{ margin: "0", padding: "0"}}>
+                                                        <a href={`${location}`} target="_blank" rel="noreferrer">
+                                                            <img src="https://dasraa.com/MultiDynamicEmail/location.png" alt="contact" style={{ width: "25px", maxWidth: "25px", height: "25px", display: "block" }} />
+                                                        </a>
+                                                    </td>
+                                                    <td style={{ margin: "0", padding: "0" }}>
+                                                        <p style={{ margin: "0", padding: "0", fontSize:"14px" }}>
+                                                            <a href={`${location}`} target="_blank" rel="noreferrer" style={{ color: "#004c98", textDecoration: "none" }}>{address}</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style={{ margin: "0", padding: "0"}}>
+                                                        <a href={`${website}`} target="_blank" rel="noreferrer" >
+                                                            <img src="https://dasraa.com/MultiDynamicEmail/website.png" alt="contact" style={{ width: "25px", maxWidth: "25px", height: "25px", display: "block" }} />
+                                                        </a>
+                                                    </td>
+                                                    <td style={{ margin: "0", padding: "0" }}>
+                                                        <p style={{ margin: "0", padding: "0", fontSize:"14px" }}>
+                                                            <a href={`${website}`} target="_blank" rel="noreferrer" style={{color: "#004c98", textDecoration: "none" }}>{website}</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+
+                                    {/* Right side - Image */}
+                                    <td style={{ margin: "0", padding: "0",textAlign:"center" }}>
+                                        <img src="https://dasraa.com/MultiDynamicEmail/awards.png" alt="awards" style={{ width: "246px", maxWidth: "246px", height: "130" }} />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <table style={{ margin: "0", padding: "0" }}>
+                            <tbody>
+                                <tr>
+                                    <td style={{ margin: "0", padding: "0" }}>
+                                        <img src="https://dasraa.com/MultiDynamicEmail/Footer.png" alt="footer" style={{ width: "820x", maxWidth: "820px", height: "auto", display: "block" }} />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p style={{ fontSize: "9px", color: "#666666", lineHeight: "100%", margin: "0", padding: "0", width: "820px" }}>
+                            <b>Disclaimer:</b>
+                            This email is for its intended recipient only. If this
+                            email has been sent to you by error or contains private or confidential
+                            information, including the contact details of other persons, then you
+                            must not copy and distribute this information. Any views expressed in
+                            this email are those of the individual sender and may not necessarily
+                            reflect the views of Multi-Dynamic Pty Ltd. The sender
+                            believes this communication is free from any virus, worm, Trojan horse
+                            and/ or malicious code when sent. By reading this message and opening
+                            any attachments, the recipient accepts full responsibility for taking
+                            protective and remedial action as required.
+                            <br />
+                            <b>Privacy Policy:</b>
+                            <a href="https://multidynamic.com.au/images/Privacy_policies.pdf" style={{ color: "#004c98", textDecoration: "none" }}>ClickHere</a>
+                        </p>
+                    </div>
+
+                </body>
+
             </div>
         </div>
     );

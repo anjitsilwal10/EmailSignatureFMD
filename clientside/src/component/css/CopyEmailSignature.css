@@ -5,231 +5,52 @@
   font-family: 'Tahoma', sans-serif;
 }
 
-a,b{
-  color: #004c98;
-}
-
-table,tr,td{
-  border-spacing: 0;
-}
-
 .container{
   display: flex;
-  flex-direction: row;
   height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.form{
-  flex: 45%;
-}
-
-.signature{
-  flex: 1000px;
-}
-
-/* css for form section */
-
-.form{
+  justify-content: center;
   
+}
+
+.form{
   background: #004c98;
   color: #ffffff;
-}
-
-#signatureform{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
- 
-}
-
-#signatureform h1{
   text-align: center;
-  padding: 5px;
-  margin: 5px;
-  font-weight: bolder;
-}
-
-.information{
- margin: auto;
- margin-left: 15%;
- position: relative;
+  width: 45%;
 }
 
 .information-child{
-  /* margin: 10px; */
   padding: 7px;
-}
-
-.information input,select{
-  padding: 7px;
-  width: 70%;
-  background-color: rgb(255,255,255,0.5);
-  border-radius: 7px;
-  border: 2px ;
-  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   
 }
 
-.information label{
+ label{
   padding: 7px;
   margin-bottom: 5px;
-  width: 100%;
+  width: 140px;
   font-weight: bold;
-  font-size: medium;
+  text-align: left;
+  border-radius: 10px;
  
 }
 
-
-option{
-  border-radius: 5px;
+input,select{
+  width: 60%;
+  border-radius: 10px;
   background-color: rgb(255,255,255,0.5);
-
+  padding: 3px;
 }
 
-#dropdown{
-  background-color: gainsboro;
-}
-
-
-/* Submit Button */
 #submit-btn{
   margin: 10px;
   padding: 5px;
-  height: auto;
-  width:auto;
   padding: 10px;
   border-radius: 12px;
   color: #ffffff;
   background-color: #f36421;
   font-size: medium;
   font-weight: bold;
-  box-shadow: black;
-}
-/* signature form ends */
-
-
-/* for signature  */
-.signature{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#previewArea{
-  width: 820px;
-  color: #004c98;
-  
-}
-
-
-.name{
-  padding: 2px;
-  font: 19.5px;
-}
-
-.designation{
-  font: 16px;
-  padding: 2px;
-
-  
-}
-
-/* Table Name and Media Section */
-table{
-  width: 100%;
-}
-.table-name{
-  width: 574px;
-}
-
-.table-media{
-  width: 246px;
-  padding: 2px;
-  text-align: center;
-}
-
-.table-media a{
-  padding: 3px;
-  
-
-}
-
-/* middle section */
-.info-section{
-  width: 574px;
-}
-
-/* .info-section a{
-  color: #004c98;
-} */
-
-#contact-detail{
-  font-size: 13px;
-  margin-left: 5px;
-  
-}
-
-td #info-logo{
-  padding: 2px;
-  height: 25px;
-  width: 25px;
-}
-
-td.awards-section{
-  width: 246px;
-  text-align: center;
-  padding: 5px;
-}
-
-.footer-img{
-  width: 820px;
-  height: 50px;
-}
-
-.p-bottom{
-  color: #666666;
-  font-size: 9px;
-  line-height: 9px;
-  width: 820px;
-}
-
-.p-top{
-  color: #004c98;
-  font-weight: bold;
-  font-size: 15px;
-}
- 
-
-.strip {
-  border-collapse: collapse;
-  height: 152px;
-  width: 820px;
-  background: url(https://dasraa.com/MultiDynamicEmail/MDstrip.png) no-repeat;
-}
-
-.as10{
-  
-  /* border: #ffffff solid 2px; */
-  border:  #f36421 solid 9px;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-}
-
-
-/* upload system css*/
-.upload-sys-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999; /* Ensure the overlay is on top of other elements */
-  /* Additional styling for the overlay */
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-  border: 1px solid #ccc;
-  padding: 10px;
-  /* Add any other styling you want for the overlay */
 }

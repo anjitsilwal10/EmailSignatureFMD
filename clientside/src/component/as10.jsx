@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../component/css/as10.css';
+import axios from 'axios';
+import './css/uploadSystem.css'
+
 
 
 const EmailSignature = () => {
@@ -12,7 +15,7 @@ const EmailSignature = () => {
     const [tel, setTel] = useState('1800 168 584');
     const [phone, setPhone] = useState('+61 000 000 000');
 
-    const [email, setEmail] = useState('multi.dynamic@multidynami.com.au');
+    const [email, setEmail] = useState('info@multidynami.com.au');
 
     const [location, setLocation] = useState('https://www.google.com/maps/search/Suite+118,+Level+49,+8+Parramatta+Square+10+Darcy+Street,+Parramatta+NSW+2150,+Australia/@-33.8154916,151.0015198,17z?entry=ttu');
     const [address, setAddress] = useState('Suite 118, Level 49, 8 Parramatta Square 10 DarcyStreet, Parramatta NSW 2150, Australia');
@@ -88,6 +91,11 @@ const EmailSignature = () => {
         alert('Signature copied to clipboard!');
     };
 
+    function handleChlidData(clickedImagePath) {
+        setDisplay(clickedImagePath);
+        console.log(dpicture);
+    }
+
     return (
         <div className="container">
             <div className="form">
@@ -99,9 +107,9 @@ const EmailSignature = () => {
                             <label htmlFor="Display Picture">Profile Picture</label><br />
                             <input type='text' id='dpicture' name='dpicture' placeholder='URL' value={dpicture}
                                 onChange={(e) => setDisplay(e.target.value)}
-                            // onClick={handleInputClick}
                             /><br />
-                            {/* {showUploadSys && <div className="upload-sys-overlay"><UploadSys /></div>} */}
+
+
                         </div>
 
                         <div className='information-child'>
@@ -114,8 +122,6 @@ const EmailSignature = () => {
                             <input type="text" id="designation" name="designation" value={designation} onChange={(e) => setDesignation(e.target.value)} /><br />
                         </div>
 
-                        {/* <label htmlFor="franchise">Franchise</label><br />
-                        <input type="text" id="franchise" name="designation" value={franchise} onChange={(e) => setFranchise(e.target.value)} /><br /> */}
                         <div className='information-child'>
                             <label htmlFor="franchise">Franchise</label><br />
                             <select id="franchise" name="franchise" value={franchise} onChange={(e) => setFranchise(e.target.value)}><br />
@@ -188,6 +194,10 @@ const EmailSignature = () => {
                         </div>
 
                         <button id="submit-btn" type="submit">Generate</button>
+
+                        <div>
+                            <FileUpload sendDataToParent={handleChlidData} />
+                        </div>
                     </div>
                 </form>
             </div>
@@ -202,7 +212,7 @@ const EmailSignature = () => {
                         </p>
                         <br />
 
-                        <table style={{ width: "820px",background: "url(https://dasraa.com/MultiDynamicEmail/MDstrip.png) no-repeat" }}>
+                        <table style={{ width: "820px", background: "url(https://dasraa.com/MultiDynamicEmail/MDstrip.png) no-repeat" }}>
                             <tbody>
                                 <tr style={{ margin: "0", padding: "0", width: "820px" }}>
                                     <td style={{ width: "820px", height: "150px" }}>
@@ -244,7 +254,7 @@ const EmailSignature = () => {
                                                             <img src="https://dasraa.com/MultiDynamicEmail/website.png" alt="contact" style={{ width: "auto", maxWidth: "100%", height: "auto", display: "block" }} />
                                                         </a>
                                                     </td>
-                                                    <td style={{ margin: "0", padding: "0", fontSize:"14px" }}>
+                                                    <td style={{ margin: "0", padding: "0", fontSize: "14px" }}>
                                                         <p style={{ margin: "0", padding: "0" }}>
                                                             <a href={`tel:{tel}`} target="_blank" rel="noreferrer" style={{ color: "#004c98", textDecoration: "none" }}>{tel}</a>
                                                             &nbsp;&nbsp;•&nbsp;&nbsp;
@@ -258,33 +268,33 @@ const EmailSignature = () => {
                                                             <img src="https://dasraa.com/MultiDynamicEmail/email.png" alt="contact" style={{ width: "25px", maxWidth: "25px", height: "25px", display: "block" }} />
                                                         </a>
                                                     </td>
-                                                    <td style={{ margin: "0", padding: "0"}}>
-                                                        <p style={{ margin: "0", padding: "0", fontSize:"14px" }}>
-                                                            <a href={`mailto:${email}`} target="_blank" rel="noreferrer" style={{ margin: "0", padding: "0",color: "#004c98", textDecoration: "none" }}>{email}</a>
+                                                    <td style={{ margin: "0", padding: "0" }}>
+                                                        <p style={{ margin: "0", padding: "0", fontSize: "14px" }}>
+                                                            <a href={`mailto:${email}`} target="_blank" rel="noreferrer" style={{ margin: "0", padding: "0", color: "#004c98", textDecoration: "none" }}>{email}</a>
                                                         </p>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style={{ margin: "0", padding: "0"}}>
+                                                    <td style={{ margin: "0", padding: "0" }}>
                                                         <a href={`${location}`} target="_blank" rel="noreferrer">
                                                             <img src="https://dasraa.com/MultiDynamicEmail/location.png" alt="contact" style={{ width: "25px", maxWidth: "25px", height: "25px", display: "block" }} />
                                                         </a>
                                                     </td>
                                                     <td style={{ margin: "0", padding: "0" }}>
-                                                        <p style={{ margin: "0", padding: "0", fontSize:"14px" }}>
+                                                        <p style={{ margin: "0", padding: "0", fontSize: "14px" }}>
                                                             <a href={`${location}`} target="_blank" rel="noreferrer" style={{ color: "#004c98", textDecoration: "none" }}>{address}</a>
                                                         </p>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style={{ margin: "0", padding: "0"}}>
+                                                    <td style={{ margin: "0", padding: "0" }}>
                                                         <a href={`${website}`} target="_blank" rel="noreferrer" >
                                                             <img src="https://dasraa.com/MultiDynamicEmail/website.png" alt="contact" style={{ width: "25px", maxWidth: "25px", height: "25px", display: "block" }} />
                                                         </a>
                                                     </td>
                                                     <td style={{ margin: "0", padding: "0" }}>
-                                                        <p style={{ margin: "0", padding: "0", fontSize:"14px" }}>
-                                                            <a href={`${website}`} target="_blank" rel="noreferrer" style={{color: "#004c98", textDecoration: "none" }}>{website}</a>
+                                                        <p style={{ margin: "0", padding: "0", fontSize: "14px" }}>
+                                                            <a href={`${website}`} target="_blank" rel="noreferrer" style={{ color: "#004c98", textDecoration: "none" }}>{website}</a>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -293,7 +303,7 @@ const EmailSignature = () => {
                                     </td>
 
                                     {/* Right side - Image */}
-                                    <td style={{ margin: "0", padding: "0",textAlign:"center" }}>
+                                    <td style={{ margin: "0", padding: "0", textAlign: "center" }}>
                                         <img src="https://dasraa.com/MultiDynamicEmail/awards.png" alt="awards" style={{ width: "246px", maxWidth: "246px", height: "130" }} />
                                     </td>
                                 </tr>
@@ -336,3 +346,123 @@ const EmailSignature = () => {
     );
 };
 export default EmailSignature;
+
+
+
+function FileUpload({sendDataToParent}) {
+    const [file, setFile] = useState(null);
+    const [uploadedImages, setUploadedImages] = useState([]); // Initialize as an empty array
+    const [errorMessage, setErrorMessage] = useState('');
+    const [showImages, setShowImages] = useState(false); // State variable to track if images should be displayed
+    const [clickedImagePath, setClickedImagePath] = useState('');
+
+
+    useEffect(() => {
+        fetchUploadedImages(); // Fetch uploaded images on component mount
+    }, []);
+
+    const handleChange = (event) => {
+        setFile(event.target.files[0]);
+        setUploadedImages([]); // Clear previously uploaded images when a new file is selected
+        setShowImages(false); // Hide images when a new file is selected
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        if (!file) {
+            setErrorMessage('Please select an image');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('image', file);
+
+        try {
+            const response = await axios.post('http://localhost:3000/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            console.log(response.data);
+            window.alert('Image uploaded successfully');
+            setShowImages(true); // Show images after successful upload
+            setErrorMessage(); // Clear error message
+            fetchUploadedImages(); // Fetch updated list of uploaded images
+        } catch (error) {
+            console.error('Error uploading file:', error);
+            setErrorMessage('Error uploading file');
+        }
+    };
+    const handleImageClick = (imagePath) => {
+        setClickedImagePath(imagePath);
+        sendDataToParent(clickedImagePath);
+        setShowImages(false);
+    };
+
+
+    const fetchUploadedImages = async () => {
+        try {
+            const response = await axios.get('http://localhost:3000/uploads');
+            console.log(response.data); // Log response data to verify format
+
+            // Destructure the response data to extract imagePath and fileName
+            const uploadedImages = response.data.map(({ imagePath, fileName }) => ({ imagePath, fileName }));
+            setUploadedImages(uploadedImages || []); // Set uploaded images state with server response or empty array if response is falsy
+        } catch (error) {
+            console.error('Error fetching uploaded images:', error);
+            setErrorMessage('Error fetching uploaded images');
+        }
+    };
+
+    useEffect(() => {
+        console.log("Clicked Image Path:", clickedImagePath);
+    }, [clickedImagePath]);
+
+
+    return (
+        <div className='container-uploadsys'>
+            <h2>Upload Image</h2>
+            <form onSubmit={handleSubmit}>
+                <input id='image-input' type="file" onChange={handleChange} />
+                <button id='upload-btn' type="submit">Upload</button>
+            </form>
+
+            {file && (
+                <div className='render-image'>
+                    <img
+                        src={URL.createObjectURL(file)}
+                        style={{ maxWidth: '150px', maxHeight: '150px' }}
+                        alt='Uploaded Preview'
+                    />
+                </div>
+            )}
+
+            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+
+            {!showImages && (
+                <button className='show-button' onClick={() => setShowImages(true)}>Uploaded Images</button>
+            )}
+
+            <button id='upload-btn' onClick={handleImageClick} type='button'>
+                Set Image
+            </button>   
+
+            {showImages && (
+                <div className='uploaded-images'>
+                    {Array.isArray(uploadedImages) && uploadedImages.map((image, index) => (
+                        <div className='images-container' key={index}>
+                            <img
+                                src={image.imagePath}
+                                alt={image.fileName}
+                                onClick={() => handleImageClick(image.imagePath)} // Call handleImageClick function on click
+                                className='gallery-image'
+                            />
+                            <p>{image.fileName}</p>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+}

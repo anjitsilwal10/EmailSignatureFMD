@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 /* cors setup */
 app.use(cors({
-    origin: 'http://localhost:4000',
+    // origin: 'http://localhost:4000',
     methods: ['GET', 'POST']
 }));
 
@@ -63,11 +63,7 @@ app.get('/uploads', (req, res) => {
             return ['.jpg', '.jpeg', '.png', '.gif'].includes(path.extname(file).toLowerCase());
         });
 
-        // Generate HTML markup for each image
-        // const imagesMarkup = imageFiles.map(file => {
-        //     const imagePath = `http://localhost:3000/uploads/${file}`; // Path to the image
-        //     return `<img src="${imagePath}" alt="${file}" width="820px" height="150px" />`;
-        // }).join('\n');
+        
         const imagesMarkup = imageFiles.map(file => {
             const imagePath = `http://localhost:3000/uploads/${file}`; // Path to the image
             return { imagePath, fileName: file };
