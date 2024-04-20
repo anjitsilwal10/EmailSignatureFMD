@@ -202,10 +202,10 @@ const EmailSignature = () => {
                         </p>
                         <br />
 
-                        <table style={{ width: "820px" }}>
-                            <tbody style={{ width: "820px" }}>
+                        <table style={{ width: "820px",background: "url(https://dasraa.com/MultiDynamicEmail/MDstrip.png) no-repeat" }}>
+                            <tbody>
                                 <tr style={{ margin: "0", padding: "0", width: "820px" }}>
-                                    <td style={{ background: "url(https://dasraa.com/MultiDynamicEmail/MDstrip.png) no-repeat", width: "820px", height: "150px" }}>
+                                    <td style={{ width: "820px", height: "150px" }}>
                                         <img src={dpicture} alt="Agent" style={{ width: "150px", maxWidth: "150px", height: "150px", display: "block", border: "8px solid #f36421", borderRadius: "100%" }} />
                                     </td>
                                 </tr>
@@ -258,14 +258,14 @@ const EmailSignature = () => {
                                                             <img src="https://dasraa.com/MultiDynamicEmail/email.png" alt="contact" style={{ width: "25px", maxWidth: "25px", height: "25px", display: "block" }} />
                                                         </a>
                                                     </td>
-                                                    <td style={{ margin: "0", padding: "0" , fontSize:"14px"}}>
+                                                    <td style={{ margin: "0", padding: "0"}}>
                                                         <p style={{ margin: "0", padding: "0", fontSize:"14px" }}>
                                                             <a href={`mailto:${email}`} target="_blank" rel="noreferrer" style={{ margin: "0", padding: "0",color: "#004c98", textDecoration: "none" }}>{email}</a>
                                                         </p>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style={{ margin: "0", padding: "0" }}>
+                                                    <td style={{ margin: "0", padding: "0"}}>
                                                         <a href={`${location}`} target="_blank" rel="noreferrer">
                                                             <img src="https://dasraa.com/MultiDynamicEmail/location.png" alt="contact" style={{ width: "25px", maxWidth: "25px", height: "25px", display: "block" }} />
                                                         </a>
@@ -277,7 +277,7 @@ const EmailSignature = () => {
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style={{ margin: "0", padding: "0" }}>
+                                                    <td style={{ margin: "0", padding: "0"}}>
                                                         <a href={`${website}`} target="_blank" rel="noreferrer" >
                                                             <img src="https://dasraa.com/MultiDynamicEmail/website.png" alt="contact" style={{ width: "25px", maxWidth: "25px", height: "25px", display: "block" }} />
                                                         </a>
@@ -293,8 +293,8 @@ const EmailSignature = () => {
                                     </td>
 
                                     {/* Right side - Image */}
-                                    <td style={{ margin: "0", padding: "0", width: "50%",textAlign:"center" }}>
-                                        <img src="https://dasraa.com/MultiDynamicEmail/awards.png" alt="Image" style={{ width: "246px", maxWidth: "246px", height: "130" }} />
+                                    <td style={{ margin: "0", padding: "0",textAlign:"center" }}>
+                                        <img src="https://dasraa.com/MultiDynamicEmail/awards.png" alt="awards" style={{ width: "246px", maxWidth: "246px", height: "130" }} />
                                     </td>
                                 </tr>
                             </tbody>
