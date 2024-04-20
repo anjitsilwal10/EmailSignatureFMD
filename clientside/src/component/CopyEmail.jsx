@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../component/css/CopyEmailSignature.css';
-import UploadSys from './uploadsystem';
+
 
 const EmailSignature = () => {
 
@@ -22,37 +22,37 @@ const EmailSignature = () => {
     const [franchise, setFranchise] = useState('Franchise');
 
     useEffect(() => {
-        if (franchise === 'Ingleburn') {
+        if (franchise === 'Multi Dynamic Ingleburn') {
             setTel('02 9618 6209');
             setWebsite('https://ingleburn.multidynamic.com.au/');
             setLocation('https://www.google.com/maps/place/Multi+Dynamic+Ingleburn-Kemps+Creek/@-33.9986686,150.8640862,97m/data=!3m1!1e3!4m6!3m5!1s0x6b12ecadac124a9d:0x2fb844822c01af68!8m2!3d-33.9986742!4d150.8641614!16s%2Fg%2F11c8080z54?hl=en&entry=ttu');
             setAddress('Shop 2, 16 Ingleburn Rd, Ingleburn NSW 2565');
         }
-        else if (franchise === 'Auburn') {
+        else if (franchise === 'Multi Dynamic Auburn') {
             setTel('1300 201 330');
             setAddress('Shop 26/22, 20 Northumberland Rd, Auburn NSW 2144');
             setLocation('google.com/maps/place/Multi+Dynamic+-+Auburn/@-33.8492245,151.030662,732m/data=!3m1!1e3!4m6!3m5!1s0x6b12bd24f2d91ce5:0x500165742fb375a6!8m2!3d-33.8480295!4d151.034055!16s%2Fg%2F11h01wsckb?hl=en&entry=tts');
             setWebsite('https://auburn.multidynamic.com.au/');
         }
-        else if (franchise === 'Rouse Hill') {
+        else if (franchise === 'Multi Dynamic Rouse Hill') {
             setTel('02 8678 7123');
             setAddress('Shop 1, 70 The Parkway, Beaumont Hills NSW 2155');
             setLocation('https://www.google.com/maps/place/Multi+Dynamic+RouseHill/@-33.6984005,150.9387259,17z/data=!3m2!4b1!5s0x6b12a1c602611177:0xa289b4b696c1ea30!4m6!3m5!1s0x6b129f332080262d:0x24ecee579acfba16!8m2!3d-33.6984005!4d150.9413008!16s%2Fg%2F11t1s6g1tg!5m1!1e1?hl=en&entry=tts');
             setWebsite('https://rousehill.multidynamic.com.au/');
         }
-        else if (franchise === 'Southport') {
+        else if (franchise === 'Multi Dynamic Southport') {
             setTel('07 5608 9845');
             setAddress('1/55 Nerang Street, Southport 4215 QLD');
             setLocation('https://www.google.com/maps/place/Multi+Dynamic+Southport/@-27.9685829,153.4113815,825m/data=!3m2!1e3!5s0x6b910ff28920c3a1:0xa1c09382830bbeee!4m6!3m5!1s0x6b910f91e719ee47:0xdc4b69ef9445cccc!8m2!3d-27.9681875!4d153.4123586!16s%2Fg%2F11n6rs5jk0?hl=en&entry=ttu');
             setWebsite('https://southport.multidynamic.com.au/');
         }
-        else if (franchise === 'Fitzgibbon') {
+        else if (franchise === 'Multi Dynamic Fitzgibbon') {
             setTel('07 3520 6611');
             setAddress('Shop 6, 545 Roghan Road, Fitzgibbon QLD 4018');
             setLocation('https://www.google.com/maps/place/Multi+Dynamic+Fitzgibbon/@-27.3386977,153.0280493,17z/data=!4m14!1m7!3m6!1s0x6b93e330fc64b05d:0xee5fde94db721747!2sMulti+Dynamic+Fitzgibbon!8m2!3d-27.3386977!4d153.0280493!16s%2Fg%2F11v6dmnppm!3m5!1s0x6b93e330fc64b05d:0xee5fde94db721747!8m2!3d-27.3386977!4d153.0280493!16s%2Fg%2F11v6dmnppm?entry=ttu');
             setWebsite('https://fitzgibbon.multidynamic.com.au/');
         }
-        else if (franchise === 'Adelaide') {
+        else if (franchise === 'Multi Dynamic Adelaide') {
             setTel('08 8164 5136');
             setAddress('Unit 2, 325 Hampstead Road, Northfield SA- 5085');
             setLocation('google.com/maps/place/Multi+Dynamic+SA/@-34.8520001,138.6180742,723m/data=!3m2!1e3!4b1!4m6!3m5!1s0x6ab0c928421ee387:0x9abff9c05b44c9ea!8m2!3d-34.8520001!4d138.6180742!16s%2Fg%2F11hsvy3pv_?hl=en&entry=tts');
@@ -72,6 +72,7 @@ const EmailSignature = () => {
     const [linkedin, setLinkedin] = useState('');
     const [twitter, setTwitter] = useState('');
     const [youtube, setYoutube] = useState('');
+    // const [showUploadSys,setShowUploadSys] = useState('true')
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -95,9 +96,12 @@ const EmailSignature = () => {
 
                     <div className="information">
                         <div className='information-child'>
-                            <label htmlFor='Display Picture'>Profile Picture</label><br />
-                            <input type='text' id='dpicture' name='dpicture' placeholder='URL' value={dpicture} onChange={(e) => setDisplay(e.target.value)} /><br />
-                            <UploadSys/>
+                            <label htmlFor= "Display Picture">Profile Picture</label><br />
+                            <input type='text' id='dpicture' name='dpicture' placeholder='URL' value={dpicture}
+                                onChange={(e) => setDisplay(e.target.value)}
+                            // onClick={handleInputClick}
+                            /><br />
+                            {/* {showUploadSys && <div className="upload-sys-overlay"><UploadSys /></div>} */}
                         </div>
 
                         <div className='information-child'>
@@ -116,12 +120,12 @@ const EmailSignature = () => {
                             <label htmlFor="franchise">Franchise</label><br />
                             <select id="franchise" name="franchise" value={franchise} onChange={(e) => setFranchise(e.target.value)}><br />
                                 <option id='dropdown' value="">Select a Franchise</option>
-                                <option id='dropdown' value="Ingleburn">Ingleburn</option>
-                                <option id='dropdown' value="Auburn">Auburn</option>
-                                <option id='dropdown' value="Rouse Hill">Rouse Hill</option>
-                                <option id='dropdown' value="Southport">Southport</option>
-                                <option id='dropdown' value="Fitzgibbon">Fitzgibbon</option>
-                                <option id='dropdown' value="Adelaide">Adelaide</option>
+                                <option id='dropdown' value="Multi Dynamic Ingleburn">Ingleburn</option>
+                                <option id='dropdown' value="Multi Dynamic Auburn">Auburn</option>
+                                <option id='dropdown' value="Multi Dynamic Rouse Hill">Rouse Hill</option>
+                                <option id='dropdown' value="Multi Dynamic Southport">Southport</option>
+                                <option id='dropdown' value="Multi Dynamic Fitzgibbon">Fitzgibbon</option>
+                                <option id='dropdown' value="Multi Dynamic Adelaide">Adelaide</option>
                                 <option id='dropdown' value="">None</option>
                             </select><br />
                         </div>
@@ -196,6 +200,7 @@ const EmailSignature = () => {
                         me.<br />
                         Kind Regards,
                     </p>
+                    <br />
 
                     <table className='strip' >
                         <tr>
@@ -215,7 +220,7 @@ const EmailSignature = () => {
                             <td className='table-name'>
                                 <h2 className='name'>{name}</h2>
                                 <p className='designation'><i>{designation}</i></p>
-                                <h4><i>{franchise}</i></h4>
+                                <h4>{franchise}</h4>
                             </td>
 
                             <td className='table-media'>
@@ -354,18 +359,6 @@ const EmailSignature = () => {
 
                         </tr>
                     </table>
-
-
-
-
-                    {/* <table className='bottom-section'>
-                        <tr className='strip-bottom'>
-                           <td className='strip-bottom-text'>
-                                    <p>Your Dream Home Is Our Mission</p>
-                           </td>
-
-                        </tr>
-                    </table> */}
 
                     <p className='p-bottom'>
                         <b>Disclaimer:</b>

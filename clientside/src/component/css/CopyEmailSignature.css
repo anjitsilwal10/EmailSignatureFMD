@@ -55,6 +55,7 @@ table,tr,td{
 .information{
  margin: auto;
  margin-left: 15%;
+ position: relative;
 }
 
 .information-child{
@@ -199,7 +200,7 @@ td.awards-section{
 .p-top{
   color: #004c98;
   font-weight: bold;
-  font-size: small;
+  font-size: 15px;
 }
  
 
@@ -217,4 +218,18 @@ td.awards-section{
   height: 150px;
   width: 150px;
   border-radius: 50%;
+}
+
+
+/* upload system css*/
+.upload-sys-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999; /* Ensure the overlay is on top of other elements */
+  /* Additional styling for the overlay */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  border: 1px solid #ccc;
+  padding: 10px;
+  /* Add any other styling you want for the overlay */
 }

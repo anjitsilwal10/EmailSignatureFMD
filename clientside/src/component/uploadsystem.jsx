@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../component/css/uploadSystem.css';
 
+
 function FileUpload() {
     const [file, setFile] = useState(null);
     const [uploadedImages, setUploadedImages] = useState([]); // Initialize as an empty array
@@ -56,6 +57,7 @@ function FileUpload() {
         try {
             const response = await axios.get('http://localhost:3000/uploads');
             console.log(response.data); // Log response data to verify format
+            
             // Destructure the response data to extract imagePath and fileName
             const uploadedImages = response.data.map(({ imagePath, fileName }) => ({ imagePath, fileName }));
             setUploadedImages(uploadedImages || []); // Set uploaded images state with server response or empty array if response is falsy
@@ -73,11 +75,11 @@ function FileUpload() {
     return (
             
             (!clickedImagePath && (
-            <div className='container'>
+            <div className='container-uploadsys'>
               <h2>Upload Image</h2>
               <form onSubmit={handleSubmit}>
-                <input type="file" onChange={handleChange} />
-                <button type="submit">Upload</button>
+                <input id='image-input' type="file" onChange={handleChange} />
+                <button id='upload-btn' type="submit">Upload</button>
               </form>
           
               {file && (

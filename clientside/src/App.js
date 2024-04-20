@@ -1,6 +1,6 @@
 import React from 'react';
 // import '../src/App.css';
-import EmailSignature from "./component/uploadsystem";
+import EmailSignature from "./component/CopyEmail";
 
 const App = () => {
     return (

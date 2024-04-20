@@ -5,7 +5,7 @@
     font-family: 'Tahoma', sans-serif;
 }
 
-.container{
+.container-uploadsys{
     min-width: 50%;
     min-height: 30vh;
     /* background-color: #f36421; */
@@ -15,15 +15,14 @@
     /* position: absolute; */
 }
 
-input{
-    /* background-color: #f36421; */
+#image-input{
     border-radius: 10px;
     border: solid,2px,#ffff;
     padding: 2px;
     margin: 2px;
 }
 
-button{
+#upload-btn{
     height: 30px;
     width: 88px;
     background-color: #f36421;
@@ -90,4 +89,6 @@ img:hover{
   .gallery-image:hover {
     opacity: 0.8; /* Reduce opacity on hover */
   }
+
+
   
