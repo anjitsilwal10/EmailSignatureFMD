@@ -97,7 +97,7 @@ const EmailSignature = () => {
                     <div className="information">
                         <div className='information-child'>
                             <label htmlFor= "Display Picture">Profile Picture</label><br />
-                            <input type='text' id='dpicture' name='dpicture' placeholder='URL' value={dpicture}
+                            <input type='' id='dpicture' name='dpicture' placeholder='URL' value={dpicture}
                                 onChange={(e) => setDisplay(e.target.value)}
                             // onClick={handleInputClick}
                             /><br />

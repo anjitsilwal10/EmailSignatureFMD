@@ -1,0 +1,56 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', sans-serif;
+  }
+
+  .container{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    
+  }
+
+  .form{
+    background: #004c98;
+    color: #ffffff;
+    text-align: center;
+    width: 45%;
+  }
+
+  .information-child{
+    padding: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+  }
+
+   label{
+    padding: 7px;
+    margin-bottom: 5px;
+    width: 140px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 10px;
+   
+  }
+
+  input,select{
+    width: 60%;
+    border-radius: 10px;
+    background-color: rgb(255,255,255,0.5);
+    padding: 3px;
+  }
+
+  #submit-btn{
+    margin: 10px;
+    padding: 5px;
+    padding: 10px;
+    border-radius: 12px;
+    color: #ffffff;
+    background-color: #f36421;
+    font-size: medium;
+    font-weight: bold;
+  }
