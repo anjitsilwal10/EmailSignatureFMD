@@ -425,7 +425,7 @@ function FileUpload({sendDataToParent}) {
             <h2>Upload Image</h2>
             <form onSubmit={handleSubmit}>
                 <input id='image-input' type="file" onChange={handleChange} />
-                <button id='upload-btn' type="submit">Upload</button>
+                <button id='upload-btn' onClick={handleSubmit} type="button">Upload</button>
             </form>
 
             {file && (
