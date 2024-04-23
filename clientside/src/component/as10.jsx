@@ -96,6 +96,39 @@ const EmailSignature = () => {
         console.log(dpicture);
     }
 
+    const handleDeleteData = async (deleteData) => {
+        const confirmDelete = window.confirm(
+            'Are you sure you want to delete this image?'
+        );
+
+        function onDeleteSuccess() {
+
+        }
+
+
+        if (confirmDelete) {
+            try {
+                // Send the DELETE request if the user confirms
+                const response = await axios.delete(
+                    `http://localhost:3000/delete/${deleteData}`
+                );
+
+                console.log('Server response:', response.data);
+
+                // Notify the user and update the UI if needed
+                window.alert('Image deleted successfully');
+
+                // You can trigger additional actions upon successful delete
+                if (onDeleteSuccess) {
+                    onDeleteSuccess(); // Callback to notify parent component or update state
+                }
+            } catch (error) {
+                console.error('Error sending DELETE request:', error);
+                window.alert('Error deleting the image'); // Alert in case of an error
+            }
+        }
+    };
+
     return (
         <div className="container">
             <div className="form">
@@ -196,7 +229,7 @@ const EmailSignature = () => {
                         <button id="submit-btn" type="submit">Generate</button>
 
                         <div>
-                            <FileUpload sendDataToParent={handleChlidData} />
+                            <FileUpload sendDataToParent={handleChlidData} sendDeleteData={handleDeleteData} />
                         </div>
                     </div>
                 </form>
@@ -349,12 +382,16 @@ export default EmailSignature;
 
 
 
-function FileUpload({sendDataToParent}) {
+function FileUpload({ sendDataToParent, sendDeleteData }) {
     const [file, setFile] = useState(null);
     const [uploadedImages, setUploadedImages] = useState([]); // Initialize as an empty array
     const [errorMessage, setErrorMessage] = useState('');
     const [showImages, setShowImages] = useState(false); // State variable to track if images should be displayed
-    const [clickedImagePath, setClickedImagePath] = useState('');
+    let clickedImagePath;
+    let deleteData;
+
+    const [refreshTrigger, setRefreshTrigger] = useState(false); // A state variable to trigger re-render
+
 
 
     useEffect(() => {
@@ -395,7 +432,7 @@ function FileUpload({sendDataToParent}) {
         }
     };
     const handleImageClick = (imagePath) => {
-        setClickedImagePath(imagePath);
+        clickedImagePath = imagePath;
         sendDataToParent(clickedImagePath);
         setShowImages(false);
     };
@@ -414,6 +451,22 @@ function FileUpload({sendDataToParent}) {
             setErrorMessage('Error fetching uploaded images');
         }
     };
+
+    useEffect(() => {
+        fetchUploadedImages(); // Fetch images when 'refreshTrigger' changes
+    }, [refreshTrigger]); // Dependency array with 'refreshTrigger'
+
+    const refreshImages = () => {
+        setRefreshTrigger(!refreshTrigger); // Toggle the refresh trigger to cause re-fetching
+    };
+
+    const handleDeleteImage = (fileName) => {
+        deleteData = fileName;
+        sendDeleteData(deleteData);
+        console.log("button clicked image Path:", deleteData);
+        refreshImages();
+
+    }
 
     useEffect(() => {
         console.log("Clicked Image Path:", clickedImagePath);
@@ -444,9 +497,9 @@ function FileUpload({sendDataToParent}) {
                 <button className='show-button' onClick={() => setShowImages(true)}>Uploaded Images</button>
             )}
 
-            <button id='upload-btn' onClick={handleImageClick} type='button'>
+            {/* <button id='upload-btn' onClick={handleImageClick} type='button'>
                 Set Image
-            </button>   
+            </button> */}
 
             {showImages && (
                 <div className='uploaded-images'>
@@ -459,6 +512,10 @@ function FileUpload({sendDataToParent}) {
                                 className='gallery-image'
                             />
                             <p>{image.fileName}</p>
+                            <button id='upload-btn' onClick={() => handleImageClick(image.imagePath)} type='button'>
+                                Set Image
+                            </button>
+                            <button id='btn' type='button' onClick={() => handleDeleteImage(image.fileName)} >Delete</button>
                         </div>
                     ))}
                 </div>
