@@ -400,8 +400,8 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
 
     const handleChange = (event) => {
         setFile(event.target.files[0]);
-        setUploadedImages([]); // Clear previously uploaded images when a new file is selected
-        setShowImages(false); // Hide images when a new file is selected
+        toggleShowImages();
+        console.log(file);
     };
 
     const handleSubmit = async (event) => {
@@ -409,6 +409,7 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
 
         if (!file) {
             setErrorMessage('Please select an image');
+            toggleShowImages();
             return;
         }
 
@@ -452,13 +453,6 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
         }
     };
 
-    useEffect(() => {
-        fetchUploadedImages(); // Fetch images when 'refreshTrigger' changes
-    }, [refreshTrigger]); // Dependency array with 'refreshTrigger'
-
-    const refreshImages = () => {
-        setRefreshTrigger(!refreshTrigger); // Toggle the refresh trigger to cause re-fetching
-    };
 
     const handleDeleteImage = (fileName) => {
         deleteData = fileName;
@@ -467,6 +461,18 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
         refreshImages();
 
     }
+
+    useEffect(() => {
+        fetchUploadedImages(); // Fetch images when 'refreshTrigger' changes
+    }, [refreshTrigger]); // Dependency array with 'refreshTrigger'
+
+    const refreshImages = () => {
+        setRefreshTrigger(!refreshTrigger); // Toggle the refresh trigger to cause re-fetching
+    };
+
+    const toggleShowImages = () => {
+        setShowImages((prevState) => !prevState); // Toggle 'showImages' using the previous state
+      };
 
     useEffect(() => {
         console.log("Clicked Image Path:", clickedImagePath);
@@ -492,15 +498,9 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
             )}
 
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-
-            {!showImages && (
-                <button className='show-button' onClick={() => setShowImages(true)}>Uploaded Images</button>
-            )}
-
-            {/* <button id='upload-btn' onClick={handleImageClick} type='button'>
-                Set Image
-            </button> */}
-
+            {/* <button className='show-button'type='button' onClick={() => setShowImages(true)}>Uploaded Images</button> */}
+            <button className='show-button'type='button' onClick={toggleShowImages}>Uploaded Images</button>
+            
             {showImages && (
                 <div className='uploaded-images'>
                     {Array.isArray(uploadedImages) && uploadedImages.map((image, index) => (
