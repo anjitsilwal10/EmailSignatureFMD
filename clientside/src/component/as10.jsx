@@ -249,7 +249,7 @@ const EmailSignature = () => {
                             <tbody>
                                 <tr style={{ margin: "0", padding: "0", width: "820px" }}>
                                     <td style={{ width: "820px", height: "150px" }}>
-                                        <img src={dpicture} alt="Agent" style={{ width: "150px", maxWidth: "150px", height: "150px", display: "block", border: "8px solid #f36421", borderRadius: "100%" }} />
+                                        <img src={dpicture} alt="Agent" style={{ width: "150px", maxWidth: "150px", height: "150px", display: "block", border: "8px solid #f36421", borderRadius: "50%" }} />
                                     </td>
                                 </tr>
                             </tbody>
