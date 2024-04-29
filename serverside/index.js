@@ -21,8 +21,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 /* cors setup */
 app.use(cors({
-    // origin: 'https://es.multidynamic.com.au:4000',
-    origin: 'http://localhost:4000',
+    origin: 'https://es.multidynamic.com.au',
+    // origin: 'http://localhost:4000',
     methods: ['GET', 'POST', 'DELETE']
 }));
 
