@@ -110,7 +110,7 @@ const EmailSignature = () => {
             try {
                 // Send the DELETE request if the user confirms
                 const response = await axios.delete(
-                    `http://localhost:3000/delete/${deleteData}`
+                    `http://es.multidynamic.com.au:3000/delete/${deleteData}`
                 );
 
                 console.log('Server response:', response.data);
@@ -417,7 +417,7 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
         formData.append('image', file);
 
         try {
-            const response = await axios.post('http://localhost:3000/upload', formData, {
+            const response = await axios.post('http://es.multidynamic.com.au:3000/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -441,7 +441,7 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
 
     const fetchUploadedImages = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/uploads');
+            const response = await axios.get('http://es.multidynamic.com.au:3000/uploads');
             console.log(response.data); // Log response data to verify format
 
             // Destructure the response data to extract imagePath and fileName
