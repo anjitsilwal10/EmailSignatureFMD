@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 /* cors setup */
 app.use(cors({
-    // origin: 'http://es.multidynamic.com.au:4000',
+    origin: 'https://es.multidynamic.com.au:4000',
     methods: ['GET', 'POST','DELETE']
 }));
 
@@ -86,7 +86,7 @@ app.get('/uploads', (req, res) => {
 
 
         const imagesMarkup = imageFiles.map(file => {
-            const imagePath = `http://es.multidynamic.com.au:3000/uploads/${file}`; // Path to the image
+            const imagePath = `https://es.multidynamic.com.au:3000/uploads/${file}`; // Path to the image
             return { imagePath, fileName: file };
         });
 
