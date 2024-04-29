@@ -8,10 +8,6 @@ const sharp = require('sharp');
 
 const multer = require('multer');
 
-const privateKey = fs.readFileSync('path/to/private/key.pem', 'utf8');
-const certificate = fs.readFileSync('path/to/certificate.pem', 'utf8');
-const credentials = { key: privateKey, cert: certificate };
-
 /* multer setup for original fliename */
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -28,10 +24,6 @@ app.use(cors({
     origin: 'https://es.multidynamic.com.au:4000',
     methods: ['GET', 'POST','DELETE']
 }));
-
-// Middleware to parse JSON and URL-encoded request bodies
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 /* uploadin the image in the uploads folder */
 app.post('/upload', upload.single('image'), (req, res) => {
@@ -104,9 +96,6 @@ app.get('/uploads', (req, res) => {
 });
 
 
-// Create HTTPS server
-const httpsServer = https.createServer(credentials, app);
-
-httpsServer.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.listen(PORT, () => {
+    console.log(`server running on port ${PORT}`);
 });
