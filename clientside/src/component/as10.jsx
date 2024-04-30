@@ -110,8 +110,8 @@ const EmailSignature = () => {
             try {
                 // Send the DELETE request if the user confirms
                 const response = await axios.delete(
-                     `https://es.multidynamic.com.au/delete/${deleteData}`
-                    //`http://localhost:3000/delete/${deleteData}`
+                    `https://es.multidynamic.com.au/delete/${deleteData}`
+                    //`https://localhost:3000/delete/${deleteData}`
                 );
 
                 console.log('Server response:', response.data);
@@ -419,7 +419,7 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
 
         try {
             const response = await axios.post('https://es.multidynamic.com.au:3000/upload', formData, {
-                //const response = await axios.post('http://localhost:3000/upload', formData, {
+            //const response = await axios.post('https://localhost:3000/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -443,7 +443,7 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
 
     const fetchUploadedImages = async () => {
         try {
-           // const response = await axios.get('http://localhost:3000/uploads');
+            //const response = await axios.get('https://localhost:3000/uploads');
             const response = await axios.get('https://es.multidynamic.com.au:3000/uploads');
             console.log(response.data); // Log response data to verify format
 
