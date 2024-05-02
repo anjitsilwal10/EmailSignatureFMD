@@ -7,7 +7,7 @@ import './css/uploadSystem.css'
 
 const EmailSignature = () => {
 
-    let [dpicture, setDisplay] = useState('https://dasraa.com/MultiDynamicEmail/ESig-Pics/MeghaRajPoudel.png');
+    let [dpicture, setDisplay] = useState('https://multidynamic.com.au/uploads/messages/agent_1596705266.jpg');
 
     const [name, setName] = useState('Full Name');
     const [designation, setDesignation] = useState('Designation');
@@ -110,8 +110,7 @@ const EmailSignature = () => {
             try {
                 // Send the DELETE request if the user confirms
                 const response = await axios.delete(
-                    `https://es.multidynamic.com.au/delete/${deleteData}`
-                    //`https://localhost:3000/delete/${deleteData}`
+                    `https://es.multidynamic.com.au:3000/delete/${deleteData}`
                 );
 
                 console.log('Server response:', response.data);
@@ -246,11 +245,11 @@ const EmailSignature = () => {
                         </p>
                         <br />
 
-                        <table style={{ width: "820px", background: "url(https://dasraa.com/MultiDynamicEmail/MDstrip.png) no-repeat" }}>
+                        <table style={{ width: "820px", height:"151px" ,background: "url(https://dasraa.com/MultiDynamicEmail/Sig-Icons/mdStrip.png) no-repeat"}}>
                             <tbody>
                                 <tr style={{ margin: "0", padding: "0", width: "820px" }}>
-                                    <td style={{ width: "820px", height: "150px" }}>
-                                        <img src={dpicture} alt="Agent" style={{ width: "150px", maxWidth: "150px", height: "150px", display: "block", border: "8px solid #f36421", borderRadius: "50%" }} />
+                                    <td style={{ width: "820px", height:"151px" }}>
+                                        <img src={dpicture} alt="Agent" style={{width: "135px", maxWidth: "135px", height: "135px", display: "block", border: "8px solid #f36421", borderRadius: "50%",boxSizing:"content-box" }} />
                                     </td>
                                 </tr>
                             </tbody>
@@ -275,7 +274,7 @@ const EmailSignature = () => {
                             </tbody>
                         </table>
 
-                        <table style={{ margin: "0", padding: "0", width: "820px" }}>
+                        <table style={{ margin: "0", padding: "0", width: "820px", height:"161px"}}>
                             <tbody>
                                 <tr>
                                     {/* Left side - Contact information */}
@@ -344,16 +343,11 @@ const EmailSignature = () => {
                             </tbody>
                         </table>
 
+                        <div style={{ width:"820px" }}>
+                            <img src="https://dasraa.com/MultiDynamicEmail/Footer.png" alt="footer" style={{ width: "820px", maxWidth: "820px", height: "auto", display: "block" }} />
 
-                        <table style={{ margin: "0", padding: "0" }}>
-                            <tbody>
-                                <tr>
-                                    <td style={{ margin: "0", padding: "0" }}>
-                                        <img src="https://dasraa.com/MultiDynamicEmail/Footer.png" alt="footer" style={{ width: "820x", maxWidth: "820px", height: "auto", display: "block" }} />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        </div>
+
 
                         <p style={{ fontSize: "9px", color: "#666666", lineHeight: "100%", margin: "0", padding: "0", width: "820px" }}>
                             <b>Disclaimer:</b>
@@ -419,7 +413,6 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
 
         try {
             const response = await axios.post('https://es.multidynamic.com.au:3000/upload', formData, {
-            //const response = await axios.post('https://localhost:3000/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -443,7 +436,6 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
 
     const fetchUploadedImages = async () => {
         try {
-            //const response = await axios.get('https://localhost:3000/uploads');
             const response = await axios.get('https://es.multidynamic.com.au:3000/uploads');
             console.log(response.data); // Log response data to verify format
 

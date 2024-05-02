@@ -4,8 +4,7 @@ const cors = require('cors');
 const PORT = 3000;
 const fs = require('fs');
 const path = require('path');
-const sharp = require('sharp');
-const origin = "https://es.multidynamic.com.au:4000"
+const origin = "https://es.multidynamic.com.au"
 
 const multer = require('multer');
 
