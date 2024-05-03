@@ -245,7 +245,7 @@ const EmailSignature = () => {
                         </p>
                         <br />
 
-                        <table style={{ width: "820px", height:"151px" ,background: "url(https://dasraa.com/MultiDynamicEmail/Sig-Icons/mdStrip.png) no-repeat"}}>
+                        <table style={{ width: "820px", height:"151px" ,background: "url(https://dasraa.com/MultiDynamicEmail/Sig-Icons/MDStrip.png) no-repeat"}}>
                             <tbody>
                                 <tr style={{ margin: "0", padding: "0", width: "820px" }}>
                                     <td style={{ width: "820px", height:"151px" }}>
