@@ -245,20 +245,10 @@ const EmailSignature = () => {
                         </p>
                         <br />
 
-                        {/* <table style={{ width: "820px", height: "151px", background: "url(https://dasraa.com/MultiDynamicEmail/Sig-Icons/MDStrip.png) no-repeat" }}>
+                        <table style={{ width: "820px", height: "155px", background: "url(https://dasraa.com/MultiDynamicEmail/Sig-Icons/MDStrip.png) no-repeat" }}>
                             <tbody>
                                 <tr style={{ margin: "0", padding: "0", width: "820px" }}>
-                                    <td style={{ width: "820px", height: "151px" }}>
-                                        <img src={dpicture} alt="Agent" style={{ width: "135px", maxWidth: "135px", height: "135px", display: "block", border: "8px solid #f36421", borderRadius: "50%", boxSizing: "content-box" }} />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table> */}
-
-                        <table style={{ width: "820px", height: "155px" }}>
-                            <tbody>
-                                <tr style={{ margin: "0", padding: "0", width: "820px" }}>
-                                    <td style={{ width: "820px", background: "url(https://dasraa.com/MultiDynamicEmail/Sig-Icons/MDStrip.png) no-repeat" }}>
+                                    <td style={{ width: "820px" }}>
                                         <img src={dpicture} alt="Agent" style={{ width: "130px", maxWidth: "130px", height: "130px", display: "block", border: "8px solid #f36421", borderRadius: "50%", boxSizing: "content-box" }} />
                                     </td>
                                 </tr>
@@ -285,7 +275,7 @@ const EmailSignature = () => {
                             </tbody>
                         </table>
 
-                        <table style={{ margin: "0", padding: "0", width: "820px", height: "161px" }}>
+                        <table style={{ margin: "0", padding: "0", width: "820px" }}>
                             <tbody>
                                 <tr>
                                     {/* Left side - Contact information */}
@@ -504,7 +494,6 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
             )}
 
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-            {/* <button className='show-button'type='button' onClick={() => setShowImages(true)}>Uploaded Images</button> */}
             <button className='show-button' type='button' onClick={toggleShowImages}>Uploaded Images</button>
 
             {showImages && (

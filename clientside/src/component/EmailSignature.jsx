@@ -245,14 +245,25 @@ const EmailSignature = () => {
                         </p>
                         <br />
 
-                        <table style={{ width: "820px" }}>
+                        {/* <table style={{ width: "820px", height: "151px", background: "url(https://dasraa.com/MultiDynamicEmail/Sig-Icons/MDStrip.png) no-repeat" }}>
                             <tbody>
-                                <tr style={{ margin: "0", padding: "0", width: "820px" ,boxSizing:"content-box", }}>
-                                    <td style={{ width: "820px", height:"155px",background: "url(https://dasraa.com/MultiDynamicEmail/Sig-Icons/mdStrip.png) no-repeat" }}>
-                                        <img src={dpicture} alt="Agent" style={{width: "139px", maxWidth: "139px", height: "139px", display: "block", border: "8px solid #f36421", borderRadius: "50%",boxSizing:"content-box" }} />
+                                <tr style={{ margin: "0", padding: "0", width: "820px" }}>
+                                    <td style={{ width: "820px", height: "151px" }}>
+                                        <img src={dpicture} alt="Agent" style={{ width: "135px", maxWidth: "135px", height: "135px", display: "block", border: "8px solid #f36421", borderRadius: "50%", boxSizing: "content-box" }} />
                                     </td>
                                 </tr>
                             </tbody>
+                        </table> */}
+
+                        <table style={{ width: "820px", height: "155px", background: "url(https://dasraa.com/MultiDynamicEmail/Sig-Icons/MDStrip.png) no-repeat" }}>
+                            <tbody>
+                                <tr style={{ margin: "0", padding: "0", width: "820px" }}>
+                                    <td style={{ width: "820px" }}>
+                                        <img src={dpicture} alt="Agent" style={{ width: "130px", maxWidth: "130px", height: "130px", display: "block", border: "8px solid #f36421", borderRadius: "50%", boxSizing: "content-box" }} />
+                                    </td>
+                                </tr>
+                            </tbody>
+
                         </table>
 
                         <table style={{ margin: "0", padding: "0", width: "820px" }}>
@@ -274,7 +285,7 @@ const EmailSignature = () => {
                             </tbody>
                         </table>
 
-                        <table style={{ margin: "0", padding: "0", width: "820px", height:"161px"}}>
+                        <table style={{ margin: "0", padding: "0", width: "820px" }}>
                             <tbody>
                                 <tr>
                                     {/* Left side - Contact information */}
@@ -343,16 +354,11 @@ const EmailSignature = () => {
                             </tbody>
                         </table>
 
+                        <div style={{ width: "820px" }}>
+                            <img src="https://dasraa.com/MultiDynamicEmail/Footer.png" alt="footer" style={{ width: "820px", maxWidth: "820px", height: "auto", display: "block" }} />
 
-                        <table style={{ margin: "0", padding: "0" }}>
-                            <tbody>
-                                <tr>
-                                    <td style={{ margin: "0", padding: "0" }}>
-                                        <img src="https://dasraa.com/MultiDynamicEmail/Footer.png" alt="footer" style={{ width: "820x", maxWidth: "820px", height: "auto", display: "block" }} />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        </div>
+
 
                         <p style={{ fontSize: "9px", color: "#666666", lineHeight: "100%", margin: "0", padding: "0", width: "820px" }}>
                             <b>Disclaimer:</b>
@@ -472,7 +478,7 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
 
     const toggleShowImages = () => {
         setShowImages((prevState) => !prevState); // Toggle 'showImages' using the previous state
-      };
+    };
 
     useEffect(() => {
         console.log("Clicked Image Path:", clickedImagePath);
@@ -499,8 +505,8 @@ function FileUpload({ sendDataToParent, sendDeleteData }) {
 
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
             {/* <button className='show-button'type='button' onClick={() => setShowImages(true)}>Uploaded Images</button> */}
-            <button className='show-button'type='button' onClick={toggleShowImages}>Uploaded Images</button>
-            
+            <button className='show-button' type='button' onClick={toggleShowImages}>Uploaded Images</button>
+
             {showImages && (
                 <div className='uploaded-images'>
                     {Array.isArray(uploadedImages) && uploadedImages.map((image, index) => (
