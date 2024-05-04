@@ -290,9 +290,9 @@ const EmailSignature = () => {
                                                     </td>
                                                     <td style={{ margin: "0", padding: "0", fontSize: "14px" }}>
                                                         <p style={{ margin: "0", padding: "0" }}>
-                                                            <a href={`tel:{tel}`} target="_blank" rel="noreferrer" style={{ color: "#004c98", textDecoration: "none" }}>{tel}</a>
+                                                            <a href={`tel:${tel}`} target="_blank" rel="noreferrer" style={{ color: "#004c98", textDecoration: "none" }}>{tel}</a>
                                                             &nbsp;&nbsp;•&nbsp;&nbsp;
-                                                            <a href="tel:{phone}" target="_blank" rel="noreferrer" style={{ color: "#004c98", textDecoration: "none" }}>{phone}</a>
+                                                            <a href={`tel:${phone}`} target="_blank" rel="noreferrer" style={{ color: "#004c98", textDecoration: "none" }}>{phone}</a>
                                                         </p>
                                                     </td>
                                                 </tr>
