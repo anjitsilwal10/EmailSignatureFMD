@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
         msg: "working"
     });
 });
-/* uploadin the image in the uploads folder */
+/* uploading the image in the uploads folder */
 app.post('/upload', upload.single('image'), (req, res) => {
     console.log(req.file);
     res.send('file uploaded successfully')
