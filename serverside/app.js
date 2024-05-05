@@ -6,6 +6,7 @@ const PORT = 3000;
 const fs = require('fs');
 const path = require('path');
 const origin = "https://es.multidynamic.com.au"
+const sharp = require('sharp')
 
 const certificate = fs.readFileSync('/etc/letsencrypt/live/es.multidynamic.com.au/fullchain.pem', 'utf8');
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/es.multidynamic.com.au/privkey.pem', 'utf8');
@@ -42,7 +43,7 @@ app.get('/', (req, res) => {
         msg: "working"
     });
 });
-/* uploading the image in the uploads folder */
+/* uploadin the image in the uploads folder */
 app.post('/upload', upload.single('image'), (req, res) => {
     console.log(req.file);
     res.send('file uploaded successfully')
