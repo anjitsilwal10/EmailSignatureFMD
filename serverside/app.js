@@ -2,7 +2,7 @@ const express = require('express');
 const https = require('https');
 const app = express();
 const cors = require('cors');
-const PORT = 3000;
+const PORT = 3001;
 const fs = require('fs');
 const path = require('path');
 const origin = "https://es.multidynamic.com.au"
@@ -48,6 +48,47 @@ app.post('/upload', upload.single('image'), (req, res) => {
     console.log(req.file);
     res.send('file uploaded successfully')
 })
+
+app.post('/upload', upload.single('image'), async (req, res) => {
+    try {
+        const originalFilePath = req.file.path; // The original path of the uploaded file
+        const originalFileName = req.file.originalname; // Original file name
+        const resizedTempPath = path.join('uploads', `temp_${originalFileName}`); // Temporary path for the resized image
+
+        // Get image metadata to determine if resizing is needed
+        const metadata = await sharp(originalFilePath).metadata();
+
+        if (metadata.width > 130 || metadata.height > 130) {
+            // Resize the image to 130x130 and save to a temporary path
+            await sharp(originalFilePath)
+                .resize(130, 130, {
+                    fit: 'cover', 
+                })
+                .jpeg({ quality: 100 }) 
+                .toFile(resizedTempPath); 
+
+            // Replace the original file with the resized image
+            await fs.promises.rename(resizedTempPath, path.join('uploads', originalFileName));
+
+            res.status(200).json({
+                message: 'File uploaded and resized successfully',
+                filePath: `/uploads/${originalFileName}`, // Path to the resized image
+            });
+        } else {
+            res.status(200).json({
+                message: 'File uploaded, no resizing required',
+                filePath: `/uploads/${originalFileName}`, // Path to the original image (no resizing needed)
+            });
+        }
+    } catch (err) {
+        console.error('Error handling image upload:', err);
+        res.status(500).json({
+            message: 'Error occurred while processing the image',
+            error: err.message, // Provide error message in response
+        });
+    }
+});
+
 
 
 app.get('/uploads/:filename', (req, res) => {
@@ -113,11 +154,6 @@ app.get('/uploads', (req, res) => {
         res.send(imagesMarkup);
     });
 });
-
-
-// app.listen(PORT, () => {
-//     console.log(`server running on port ${PORT}`);
-// });
 
 // Create HTTPS server
 const server = https.createServer(options, app);
