@@ -109,7 +109,7 @@ app.get('/uploads/:filename', (req, res) => {
 });
 
 // DELETE endpoint to remove an image from the "uploads" directory
-app.delete('/delete/:imagePath', (req, res) => {
+app.delete('/dele/:imagePath', (req, res) => {
     const { imagePath } = req.params; // Extract the image path from the URL
     const fullPath = path.join(__dirname, 'uploads', imagePath); // Create the full path
 
