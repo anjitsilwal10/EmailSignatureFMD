@@ -285,7 +285,7 @@ const EmailSignature = () => {
                                                 <tr>
                                                     <td style={{ margin: "0", padding: "0" }}>
                                                         <a href={`tel:${phone}`} target="_blank" rel="noreferrer">
-                                                            <img src="https://dasraa.com/MultiDynamicEmail/website.png" alt="contact" style={{ width: "auto", maxWidth: "100%", height: "auto", display: "block" }} />
+                                                            <img src="https://dasraa.com/MultiDynamicEmail/phone.png" alt="contact" style={{ width: "auto", maxWidth: "100%", height: "auto", display: "block" }} />
                                                         </a>
                                                     </td>
                                                     <td style={{ margin: "0", padding: "0", fontSize: "14px" }}>
