@@ -17,7 +17,7 @@ const EmailSignature = () => {
 
     const [email, setEmail] = useState('info@multidynami.com.au');
 
-    const [location, setLocation] = useState('https://www.google.com/maps/search/Suite+118,+Level+49,+8+Parramatta+Square+10+Darcy+Street,+Parramatta+NSW+2150,+Australia/@-33.8154916,151.0015198,17z?entry=ttu');
+    const [location, setLocation] = useState('https://maps.app.goo.gl/pgUM4JxafTER3dxe7');
     const [address, setAddress] = useState('Suite 118, Level 49, 8 Parramatta Square 10 DarcyStreet, Parramatta NSW 2150, Australia');
 
     const [website, setWebsite] = useState('https://www.multidynamic.com.au');
@@ -34,37 +34,37 @@ const EmailSignature = () => {
         else if (franchise === 'Multi Dynamic Auburn') {
             setTel('1300 201 330');
             setAddress('Shop 26/22, 20 Northumberland Rd, Auburn NSW 2144');
-            setLocation('google.com/maps/place/Multi+Dynamic+-+Auburn/@-33.8492245,151.030662,732m/data=!3m1!1e3!4m6!3m5!1s0x6b12bd24f2d91ce5:0x500165742fb375a6!8m2!3d-33.8480295!4d151.034055!16s%2Fg%2F11h01wsckb?hl=en&entry=tts');
+            setLocation('https://maps.app.goo.gl/D6aNVCjmV88t93RL6');
             setWebsite('https://auburn.multidynamic.com.au/');
         }
         else if (franchise === 'Multi Dynamic Rouse Hill') {
             setTel('02 8678 7123');
             setAddress('Shop 1, 70 The Parkway, Beaumont Hills NSW 2155');
-            setLocation('https://www.google.com/maps/place/Multi+Dynamic+RouseHill/@-33.6984005,150.9387259,17z/data=!3m2!4b1!5s0x6b12a1c602611177:0xa289b4b696c1ea30!4m6!3m5!1s0x6b129f332080262d:0x24ecee579acfba16!8m2!3d-33.6984005!4d150.9413008!16s%2Fg%2F11t1s6g1tg!5m1!1e1?hl=en&entry=tts');
+            setLocation('https://maps.app.goo.gl/vfT3nHDQP3Wj8NkBA');
             setWebsite('https://rousehill.multidynamic.com.au/');
         }
         else if (franchise === 'Multi Dynamic Southport') {
             setTel('07 5608 9845');
             setAddress('1/55 Nerang Street, Southport 4215 QLD');
-            setLocation('https://www.google.com/maps/place/Multi+Dynamic+Southport/@-27.9685829,153.4113815,825m/data=!3m2!1e3!5s0x6b910ff28920c3a1:0xa1c09382830bbeee!4m6!3m5!1s0x6b910f91e719ee47:0xdc4b69ef9445cccc!8m2!3d-27.9681875!4d153.4123586!16s%2Fg%2F11n6rs5jk0?hl=en&entry=ttu');
+            setLocation('https://maps.app.goo.gl/jFuWurjEQQaABFVu9');
             setWebsite('https://southport.multidynamic.com.au/');
         }
         else if (franchise === 'Multi Dynamic Fitzgibbon') {
             setTel('07 3520 6611');
             setAddress('Shop 6, 545 Roghan Road, Fitzgibbon QLD 4018');
-            setLocation('https://www.google.com/maps/place/Multi+Dynamic+Fitzgibbon/@-27.3386977,153.0280493,17z/data=!4m14!1m7!3m6!1s0x6b93e330fc64b05d:0xee5fde94db721747!2sMulti+Dynamic+Fitzgibbon!8m2!3d-27.3386977!4d153.0280493!16s%2Fg%2F11v6dmnppm!3m5!1s0x6b93e330fc64b05d:0xee5fde94db721747!8m2!3d-27.3386977!4d153.0280493!16s%2Fg%2F11v6dmnppm?entry=ttu');
+            setLocation('https://maps.app.goo.gl/T8KbJNAaee1KF2VU8');
             setWebsite('https://fitzgibbon.multidynamic.com.au/');
         }
         else if (franchise === 'Multi Dynamic Adelaide') {
             setTel('08 8164 5136');
             setAddress('Unit 2, 325 Hampstead Road, Northfield SA- 5085');
-            setLocation('google.com/maps/place/Multi+Dynamic+SA/@-34.8520001,138.6180742,723m/data=!3m2!1e3!4b1!4m6!3m5!1s0x6ab0c928421ee387:0x9abff9c05b44c9ea!8m2!3d-34.8520001!4d138.6180742!16s%2Fg%2F11hsvy3pv_?hl=en&entry=tts');
+            setLocation('https://maps.app.goo.gl/irHvwkTzzmv3uLXB9');
             setWebsite('https://sa.multidynamic.com.au/');
         }
         else if (franchise === '') {
             setTel('1800 168 584');
             setAddress('Suite 118, Level 49, 8 Parramatta Square 10 DarcyStreet, Parramatta NSW 2150, Australia');
-            setLocation('https://www.google.com/maps/search/Suite+118,+Level+49,+8+Parramatta+Square+10+Darcy+Street,+Parramatta+NSW+2150,+Australia/@-33.8154916,151.0015198,17z?entry=ttu');
+            setLocation('https://maps.app.goo.gl/pgUM4JxafTER3dxe7');
             setWebsite('https://www.multidynamic.com.au');
 
         }
