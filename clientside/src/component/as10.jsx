@@ -28,8 +28,8 @@ const EmailSignature = () => {
         if (franchise === 'Multi Dynamic Ingleburn') {
             setTel('02 9618 6209');
             setWebsite('https://ingleburn.multidynamic.com.au/');
-            setLocation('https://www.google.com/maps/place/Multi+Dynamic+Ingleburn-Kemps+Creek/@-33.9986686,150.8640862,97m/data=!3m1!1e3!4m6!3m5!1s0x6b12ecadac124a9d:0x2fb844822c01af68!8m2!3d-33.9986742!4d150.8641614!16s%2Fg%2F11c8080z54?hl=en&entry=ttu');
-            setAddress('Shop 2, 16 Ingleburn Rd, Ingleburn NSW 2565');
+            setLocation('https://maps.app.goo.gl/QMxbFEzYRQeuapgDA');
+            setAddress('10c Oxford Rd, Ingleburn NSW 2565, Australia');
         }
         else if (franchise === 'Multi Dynamic Auburn') {
             setTel('1300 201 330');
